@@ -1,4 +1,5 @@
-﻿function start() {
+﻿//initialize values when body is loaded.
+function start() {
     var canvas = document.getElementById('canvas');
 	//var cnvCtx= canvas.getContext();
 	 
@@ -21,7 +22,7 @@
 	triangCnv.addEventListener("click", drawMainCnvTringleShape, false);
 	circlCnv.addEventListener("click", drawMainCnvCircleShape, false);
 }
-
+//Function to draw in the main canvas if the selected figure is square
 function drawMainCnvSquareShape(){
     var canvas = document.getElementById('canvas');
 	var ctxSqM = canvas.getContext('2d');
@@ -31,7 +32,7 @@ function drawMainCnvSquareShape(){
 	ctxSqM.closePath();
 	ctxSqM.stroke();
 }
-
+//Function to draw in the main canvas if the selected figure is triangle
 function drawMainCnvTringleShape(){
 	var canvas = document.getElementById('canvas');
 	var ctx = canvas.getContext('2d');
@@ -44,7 +45,7 @@ function drawMainCnvTringleShape(){
         ctx.fill();
         ctx.stroke();
 }
-
+//Function to draw in the main canvas if the selected figure is circle
 function drawMainCnvCircleShape(){
 	var canvas = document.getElementById('canvas');
 	var ctx = canvas.getContext('2d');
@@ -56,7 +57,7 @@ function drawMainCnvCircleShape(){
 	ctx.stroke();
 }
 
-
+//Draws the icon square option to select.
 function drawSquareShape(){
 	var canvas = document.getElementById('cnvSquare');
 	var ctx = canvas.getContext('2d');
@@ -66,7 +67,7 @@ function drawSquareShape(){
 	ctx.closePath();
 	ctx.stroke();
 }
-
+//Draws the icon triangle option to select.
 function drawTringleShape(){
 	var canvas = document.getElementById('cnvTriangle');
 	var ctx = canvas.getContext('2d');
@@ -80,7 +81,7 @@ function drawTringleShape(){
         ctx.fill();
         ctx.stroke();
 }
-
+//Draws the icon circle option to select.
 function drawCircleShape(){
 	var canvas = document.getElementById('cnvCircle');
 	var ctx = canvas.getContext('2d');
@@ -92,6 +93,7 @@ function drawCircleShape(){
 	ctx.stroke();
 }
 
+//function created to move shapes but it is no usefull it couldnt be ended.
 function draw() {
     var canvas = document.getElementById('canvas');
 
@@ -154,6 +156,7 @@ function myMove(e) {
     }
 }
 */
+//function created to move shapes but it is no usefull it couldnt be ended.
 function myDown(e) {
     var x = 0;
     e.x;
@@ -167,7 +170,7 @@ function myDown(e) {
     var context = getSelectedContexts(e.x, e.y);
 
 }
-
+//function created to move shapes but it is no usefull it couldnt be ended.
 function myUp(e) {
     var canvas = getCanvas();
     canvas.startMove;
@@ -178,7 +181,7 @@ function myUp(e) {
 
     context.translate();
 }
-
+//function created to move shapes but it is no usefull it couldnt be ended.
 function getSelectedContexts(x, y) {
     //var selectedContexts = new Array();
     var canvas = getCanvas();

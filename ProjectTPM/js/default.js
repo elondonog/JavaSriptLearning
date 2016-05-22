@@ -29,15 +29,16 @@
     //draws circle
     drawFractionAsCircles(x, numArcs)
 }
+
+//Validate is the value entered is a number
 function validateNumber(number){
 	if(isNaN(number)){
 	alert(number + " is not a number");
 	number=null;
  }
- //else{
-	//document.write(number + " is a number <br/>");
- //}
 }
+
+//Establish the size of canvas to draw circles.
 function setCanvasSize(){
 	var theCanvas = document.getElementById("myCircleCanvas");
 	
@@ -46,6 +47,7 @@ function setCanvasSize(){
 		
 }
 
+//draw circles.
 function drawFractionAsCircles(numerator, denominator) {
 
     //number of cicles to draw
@@ -67,6 +69,7 @@ function drawFractionAsCircles(numerator, denominator) {
 
     for (nC = 0; nC < NumCircles; nC++) {
         
+		//draw arcs per circle.
         for (i = 0; i < denominator; i++) {
             
             var startAngle = 0 + i * phase
@@ -89,6 +92,7 @@ function drawFractionAsCircles(numerator, denominator) {
         }
     }
 	
+	//draws pending arcs out of complete circle.
 	if (module>0){
 	
 		for (i = 0; i < module; i++) {
