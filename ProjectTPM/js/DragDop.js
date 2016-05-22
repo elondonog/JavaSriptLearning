@@ -1,9 +1,95 @@
 ﻿function start() {
-    var canvas = getCanvas();
-    canvas.onmousedown = myDown;
-    canvas.onmouseup = myUp;
-    canvas.myContexts = new Array();
-    canvas.lastZIndex = 0
+    var canvas = document.getElementById('canvas');
+	//var cnvCtx= canvas.getContext();
+	 
+	//cnvCtx.width=window.width-100;
+	//cnvCtx.height=window.height;
+
+    //canvas.onmousedown = myDown;
+    //canvas.onmouseup = myUp;
+    //canvas.myContexts = new Array();
+    //canvas.lastZIndex = 0;
+	drawSquareShape();
+	drawTringleShape();
+	drawCircleShape();
+	
+	var sqCnv = document.getElementById("cnvSquare");
+	var triangCnv = document.getElementById("cnvTriangle");
+	var circlCnv = document.getElementById("cnvCircle");
+	
+	sqCnv.addEventListener("click", drawMainCnvSquareShape, false);
+	triangCnv.addEventListener("click", drawMainCnvTringleShape, false);
+	circlCnv.addEventListener("click", drawMainCnvCircleShape, false);
+}
+
+function drawMainCnvSquareShape(){
+    var canvas = document.getElementById('canvas');
+	var ctxSqM = canvas.getContext('2d');
+	ctxSqM.beginPath();
+	ctxSqM.fillStyle = "red";
+	ctxSqM.fillRect(100, 100, 400, 400);
+	ctxSqM.closePath();
+	ctxSqM.stroke();
+}
+
+function drawMainCnvTringleShape(){
+	var canvas = document.getElementById('canvas');
+	var ctx = canvas.getContext('2d');
+        ctx.beginPath();
+        ctx.moveTo(150, 150);
+        ctx.lineTo(300, 450);
+        ctx.lineTo(300, 50);
+        ctx.closePath();
+        ctx.fillStyle = "blue";
+        ctx.fill();
+        ctx.stroke();
+}
+
+function drawMainCnvCircleShape(){
+	var canvas = document.getElementById('canvas');
+	var ctx = canvas.getContext('2d');
+	ctx.beginPath();
+	ctx.fillStyle = "brown";
+	ctx.arc(200, 200, 100, 0, 2 * Math.PI);
+	ctx.closePath();
+	ctx.fill();
+	ctx.stroke();
+}
+
+
+function drawSquareShape(){
+	var canvas = document.getElementById('cnvSquare');
+	var ctx = canvas.getContext('2d');
+	ctx.fillStyle = "red";
+	ctx.beginPath();
+	ctx.fillRect(10, 10, 40, 40)
+	ctx.closePath();
+	ctx.stroke();
+}
+
+function drawTringleShape(){
+	var canvas = document.getElementById('cnvTriangle');
+	var ctx = canvas.getContext('2d');
+
+        ctx.beginPath();
+        ctx.moveTo(10, 10);
+        ctx.lineTo(50, 50);
+        ctx.lineTo(10, 50);
+        ctx.closePath();
+        ctx.fillStyle = "blue";
+        ctx.fill();
+        ctx.stroke();
+}
+
+function drawCircleShape(){
+	var canvas = document.getElementById('cnvCircle');
+	var ctx = canvas.getContext('2d');
+	ctx.beginPath();
+	ctx.fillStyle = "black";
+	ctx.arc(20, 20, 20, 0, 2 * Math.PI);
+	ctx.closePath();
+	ctx.fill();
+	ctx.stroke();
 }
 
 function draw() {
