@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>ProjectTPM</title>
+    <link href="css/default.css" rel="stylesheet" />
+    <script src="js/default.js"></script>
+</head>
+<body>
+    <h1>Improper Fractions to Mixed Fractions.</h1>
+    <p>Numerator:</p> <input id="numAtor" onchange="validateNumber(document.getElementById('numAtor').value)" />
+    <p>Denominator:</p><input id="denAtor"  onchange="validateNumber(document.getElementById('denAtor').value)"  />
+	<p>Radious:</p><input id="radious" Text='50'  onchange="validateNumber(document.getElementById('radious').value)" />
+	<P id="demo"></P><button id="btnDraw" onclick="calcNumbers()" >Draw</button>
+    <p id="mixedFraction" style="font-size:large"></p>
+    <p id="decNumber" style="font-size:large"></p>
+    <p id="Error" ></p>
+
+	<canvas id="myCircleCanvas" ></canvas>
+
+</body>
+</html>
